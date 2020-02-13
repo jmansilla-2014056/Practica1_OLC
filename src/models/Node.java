@@ -10,10 +10,10 @@ package models;
  * @author User
  */
 public class Node {
-    char value; 
+    String value; 
     Node left, right; 
   
-    Node(char item) { 
+    Node(String item) { 
         value = item; 
         left = right = null; 
     } 

@@ -16,7 +16,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -26,7 +25,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 import manejador.CrearHtml;
-//import manejador.ManejarToken;
+import manejador.ManejarToken;
 //import models.Pokedex;
 import models.Biblioteca;
 import models.Tokens;
@@ -200,7 +199,7 @@ public class Editor extends javax.swing.JFrame {
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
      listaPalabras.clear();
      //Llenar biblioteca con palabras reservadas   
-     listaPalabras.add(new Biblioteca(1,"Ninguna palabra reservada",Color.CYAN));
+     listaPalabras.add(new Biblioteca(1,"CONJ",Color.CYAN));
  /*    listaPalabras.add(new Biblioteca(2,"Nombre",Color.CYAN));
      listaPalabras.add(new Biblioteca(3,"Tipo",Color.CYAN));
      listaPalabras.add(new Biblioteca(4,"Vida",Color.CYAN));
@@ -227,16 +226,15 @@ public class Editor extends javax.swing.JFrame {
     generador();    
     
  //   ArrayList<Pokedex> arraypokedex= ManejarToken.HacerNiveles(listaTokens);
-    
-    if(listaErrores.size()>0){
-        
-        CrearHtml.ErroresHtml((ArrayList<Trampa>) listaErrores);
-               
+    ManejarToken mt = new ManejarToken();
+    mt.MetodoArbol(listaTokens);
+ 
+    if(listaErrores.size()>0){        
+        CrearHtml.ErroresHtml((ArrayList<Trampa>) listaErrores);    
     }else{
             CrearHtml.tokensHtml(listaTokens);
-    
     }    
-    
+        
     }//GEN-LAST:event_jAceptarActionPerformed
     
     //Acccion guardar
@@ -328,7 +326,7 @@ public class Editor extends javax.swing.JFrame {
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        JOptionPane.showMessageDialog(null,"Universidad de San Carlos de Guatemala"+"\n"+"Junio 2019"+ "\n" + "Lenguajes Formales y de Programacion" + "\n"+ "Seccion A" + "\n" +"Jesús Alejandro Mansilla Villatoro" + "\n" + "201709396" );                
+        JOptionPane.showMessageDialog(null,"Universidad de San Carlos de Guatemala"+"\n"+"Febrero 2020"+ "\n" + "OCL1" + "\n"+ "Seccion A" + "\n" +"Jesús Alejandro Mansilla Villatoro" + "\n" + "201709396" );                
     }//GEN-LAST:event_jMenuItem1ActionPerformed
         
     //Concatenar hasta encontrar un espacio, un espacio o dos puntos
@@ -743,9 +741,8 @@ public class Editor extends javax.swing.JFrame {
                     
                 }
     }
-     
     
-        void guardarM(){
+     void guardarM(){
               if(cadena != null){
                 try {
                     FileWriter fichero2 = new FileWriter(cadena);
