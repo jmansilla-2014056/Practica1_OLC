@@ -1,0 +1,42 @@
+digraph {
+node [shape = rectangle, height=0.5, width=1.2];
+"models.Node@6535d5f8"[shape = record, label="{abecedario|Identificador}"]
+"models.Node@5d4ac61e"[shape = record, label="{\||OR}"]
+"models.Node@5d4ac61e"->"models.Node@69081cc4"
+"models.Node@5d4ac61e"->"models.Node@6535d5f8"
+"models.Node@69081cc4"[shape = record, label="{_|Texto}"]
+"models.Node@677443f4"[shape = record, label="{*|Asterisco}"]
+"models.Node@677443f4"->"models.Node@5d4ac61e"
+"models.Node@2c25c0f7"[shape = record, label="{.|Punto}"]
+"models.Node@2c25c0f7"->"models.Node@27d4995b"
+"models.Node@2c25c0f7"->"models.Node@677443f4"
+"models.Node@e934f59"[shape = record, label="{conjnum|Identificador}"]
+"models.Node@27d4995b"[shape = record, label="{+|Mas}"]
+"models.Node@27d4995b"->"models.Node@e934f59"
+"models.Node@4b3dd69c"[shape = record, label="{.|Punto}"]
+"models.Node@4b3dd69c"->"models.Node@499d8574"
+"models.Node@4b3dd69c"->"models.Node@2c25c0f7"
+"models.Node@499d8574"[shape = record, label="{\>|Texto}"]
+"models.Node@4a00c35d"[shape = record, label="{.|Punto}"]
+"models.Node@4a00c35d"->"models.Node@5efda4c3"
+"models.Node@4a00c35d"->"models.Node@4b3dd69c"
+"models.Node@7bd110b6"[shape = record, label="{conjnum|Identificador}"]
+"models.Node@5efda4c3"[shape = record, label="{+|Mas}"]
+"models.Node@5efda4c3"->"models.Node@7bd110b6"
+"models.Node@5e429c9d"[shape = record, label="{.|Punto}"]
+"models.Node@5e429c9d"->"models.Node@1214b623"
+"models.Node@5e429c9d"->"models.Node@4a00c35d"
+"models.Node@1214b623"[shape = record, label="{es |Texto}"]
+"models.Node@217cc31e"[shape = record, label="{.|Punto}"]
+"models.Node@217cc31e"->"models.Node@525b3327"
+"models.Node@217cc31e"->"models.Node@5e429c9d"
+"models.Node@1837eb85"[shape = record, label="{TRUE|Texto}"]
+"models.Node@525b3327"[shape = record, label="{\||OR}"]
+"models.Node@525b3327"->"models.Node@2fa5f30e"
+"models.Node@525b3327"->"models.Node@1837eb85"
+"models.Node@2fa5f30e"[shape = record, label="{FALSE|Texto}"]
+"models.Node@6806b1d7"[shape = record, label="{.|Punto}"]
+"models.Node@6806b1d7"->"models.Node@634f75fb"
+"models.Node@6806b1d7"->"models.Node@217cc31e"
+"models.Node@634f75fb"[shape = record, label="{.|Texto}"]
+}

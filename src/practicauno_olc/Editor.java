@@ -227,7 +227,7 @@ public class Editor extends javax.swing.JFrame {
     
  //   ArrayList<Pokedex> arraypokedex= ManejarToken.HacerNiveles(listaTokens);
     ManejarToken mt = new ManejarToken();
-    mt.MetodoArbol(listaTokens);
+    mt.Parser(listaTokens);
  
     if(listaErrores.size()>0){        
         CrearHtml.ErroresHtml((ArrayList<Trampa>) listaErrores);    
@@ -445,7 +445,7 @@ public class Editor extends javax.swing.JFrame {
               
              case '%':          
                  contador = x;
-                 listaTokens.add(new Tokens(26,"%", "Porcentaje", obtenerFila(contador), obtenerColumna(contador)));            
+                 listaTokens.add(new Tokens((int) analizar[x],"%", "Porcentaje", obtenerFila(contador), obtenerColumna(contador)));            
                  pintar(contador,contador+1, Color.MAGENTA);
                  break;
              case '+':          
@@ -619,6 +619,8 @@ public class Editor extends javax.swing.JFrame {
             contador--;
         }
     } 
+    
+    
     
     private void comentarioL() {
         try{

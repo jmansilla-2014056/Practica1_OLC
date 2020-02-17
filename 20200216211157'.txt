@@ -1,0 +1,4 @@
+digraph {
+node [shape = rectangle, height=0.5, width=1.2];
+"models.Node@691e3e0f"[shape = record, label="{.|Punto}"]
+}

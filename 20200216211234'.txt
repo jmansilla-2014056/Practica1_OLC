@@ -1,0 +1,28 @@
+digraph {
+node [shape = rectangle, height=0.5, width=1.2];
+"models.Node@31198ae1"[shape = record, label="{Los |Texto}"]
+"models.Node@42036129"[shape = record, label="{\||OR}"]
+"models.Node@42036129"->"models.Node@15a87aae"
+"models.Node@42036129"->"models.Node@31198ae1"
+"models.Node@15a87aae"[shape = record, label="{El |Texto}"]
+"models.Node@3995a22a"[shape = record, label="{.|Punto}"]
+"models.Node@3995a22a"->"models.Node@4426697b"
+"models.Node@3995a22a"->"models.Node@42036129"
+"models.Node@1df552ff"[shape = record, label="{vocales|Identificador}"]
+"models.Node@4b5e26e5"[shape = record, label="{\||OR}"]
+"models.Node@4b5e26e5"->"models.Node@5f4e4956"
+"models.Node@4b5e26e5"->"models.Node@1df552ff"
+"models.Node@5f4e4956"[shape = record, label="{otrasLetras|Identificador}"]
+"models.Node@28d49e75"[shape = record, label="{+|Mas}"]
+"models.Node@28d49e75"->"models.Node@4b5e26e5"
+"models.Node@4426697b"[shape = record, label="{.|Punto}"]
+"models.Node@4426697b"->"models.Node@1f01433a"
+"models.Node@4426697b"->"models.Node@28d49e75"
+"models.Node@25522731"[shape = record, label="{abecedario|Identificador}"]
+"models.Node@87bde34"[shape = record, label="{\||OR}"]
+"models.Node@87bde34"->"models.Node@450ce78"
+"models.Node@87bde34"->"models.Node@25522731"
+"models.Node@450ce78"[shape = record, label="{_|Texto}"]
+"models.Node@1f01433a"[shape = record, label="{*|Asterisco}"]
+"models.Node@1f01433a"->"models.Node@87bde34"
+}
