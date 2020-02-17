@@ -89,8 +89,9 @@ public class ManejarToken {
             }
             t=consumir();
         }
+       
       //  arbol.add(0,new Tokens(46,".", "Punto", 0,0));
-      //  arbol.add(1,new Tokens(35,"#","acpetacion",0,0));
+      //  arbol.add(new Tokens(35,"\"#\"","acpetacion",0,0));
             for(Tokens a: this.arbol){
                 System.out.println(a.getLexema());
             }
