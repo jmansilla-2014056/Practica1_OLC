@@ -6,6 +6,8 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -13,25 +15,43 @@ import java.util.ArrayList;
  */
 public class Node {
     Tokens value; 
-    
+    int numeracion;
     Node left, right; 
     ArrayList<Integer> primeros;
     ArrayList<Integer> ultimos;
+    boolean anulable;
+
+    public int getNumeracion() {
+        return numeracion;
+    }
+
+    public void setNumeracion(int numeracion) {
+        this.numeracion = numeracion;
+    }
+
+    public boolean isAnulable() {
+        return anulable;
+    }
+
+    public void setAnulable(boolean anulable) {
+        this.anulable = anulable;
+    }
+    
 
     public ArrayList<Integer> getPrimeros() {
         return primeros;
     }
 
-    public void setPrimeros(ArrayList<Integer> primeros) {
-        this.primeros = primeros;
+    public void setPrimeros(int a) {
+        this.primeros.add(a);
     }
 
     public ArrayList<Integer> getUltimos() {
         return ultimos;
     }
 
-    public void setUltimos(ArrayList<Integer> ultimos) {
-        this.ultimos = ultimos;
+    public void setUltimos(int a) {
+        this.ultimos.add(a);
     }
    
     
@@ -60,7 +80,14 @@ public class Node {
         this.right = right;
     }
     
-  
+    public void noDuplicar() {
+        Set<Integer> cualquiernombre = new HashSet<>(this.primeros);
+        Set<Integer> cualquiernombre2 = new HashSet<>(this.ultimos);
+        this.primeros.clear();
+        this.primeros.addAll(cualquiernombre);
+        this.ultimos.clear();
+        this.ultimos.addAll(cualquiernombre2);
+    }
   
     public Node(Tokens item) { 
         value = item; 

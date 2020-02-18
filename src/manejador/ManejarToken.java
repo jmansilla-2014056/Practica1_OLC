@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.ExpresionR;
 import models.Tokens;
 import practicauno_olc.Editor;
 
@@ -20,13 +21,15 @@ import practicauno_olc.Editor;
 public class ManejarToken {
     static ArrayList<Tokens> listaTokens = new ArrayList<>();
     ArrayList<Tokens> arbol = new ArrayList<>();
+    ArrayList<Tree> treeList = new ArrayList<>();;
+    String nombreEr="";
     int x=-1;
     Tokens token;
     
-    public void Parser(ArrayList<Tokens> LT) {
+    public ArrayList<Tree> Parser(ArrayList<Tokens> LT) {
         listaTokens = LT; 
          LLavesI(consumir());
-            
+         return treeList;
     }
     
     public Tokens consumir(){
@@ -52,6 +55,7 @@ public class ManejarToken {
         if(t.getId()==1){
             dosPuntos(consumir());
         }else if(t.getId()==32){
+            this.nombreEr = t.getLexema();
             guionE(consumir());
         }
         else if(t.getId()==37){
@@ -99,8 +103,13 @@ public class ManejarToken {
        
         Tree tree;
         try {
-            tree = new Tree(arbol);
-            tree.graficar();
+            tree = new Tree(arbol,this.nombreEr);
+          //  tree.graficar();
+            ExpresionR er = new ExpresionR();
+            
+            er.setNombre(nombreEr);
+            er.setTokens(arbol);
+            this.treeList.add(tree);
             arbol.clear();
         } catch (IOException ex) {
             Logger.getLogger(ManejarToken.class.getName()).log(Level.SEVERE, null, ex);
@@ -207,8 +216,6 @@ public class ManejarToken {
     }
      
      
-     
-     
      void comaOrPunto0(Tokens t){
         //viene punto y coma?
         if(t.getId() == 59){
@@ -303,10 +310,5 @@ public class ManejarToken {
         }    
     }
      
-     
-    
-     
-    
-   
      
 }

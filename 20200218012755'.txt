@@ -1,0 +1,112 @@
+digraph test {
+    graph [ratio=fill];
+    node [label="\N", fontsize=15, shape=plaintext];
+    arset [label=<
+        <TABLE ALIGN="LEFT">
+            <TR>
+                <TD>Hoja</TD>
+                <TD>#Hoja</TD>
+	      <TD>Siguientes</TD>
+            </TR>
+<TR>
+<TD>
+abecedario
+</TD>
+<TD>
+0
+</TD>
+<TD>
+[0, 1, 2]
+</TD>
+</TR>
+<TR>
+<TD>
+_
+</TD>
+<TD>
+1
+</TD>
+<TD>
+[0, 1, 2]
+</TD>
+</TR>
+<TR>
+<TD>
+conjnum
+</TD>
+<TD>
+2
+</TD>
+<TD>
+[2, 3]
+</TD>
+</TR>
+<TR>
+<TD>
+&#62;
+</TD>
+<TD>
+3
+</TD>
+<TD>
+[4]
+</TD>
+</TR>
+<TR>
+<TD>
+conjnum
+</TD>
+<TD>
+4
+</TD>
+<TD>
+[4, 5]
+</TD>
+</TR>
+<TR>
+<TD>
+es 
+</TD>
+<TD>
+5
+</TD>
+<TD>
+[6, 7]
+</TD>
+</TR>
+<TR>
+<TD>
+TRUE
+</TD>
+<TD>
+6
+</TD>
+<TD>
+[8]
+</TD>
+</TR>
+<TR>
+<TD>
+FALSE
+</TD>
+<TD>
+7
+</TD>
+<TD>
+[8]
+</TD>
+</TR>
+<TR>
+<TD>
+.
+</TD>
+<TD>
+8
+</TD>
+<TD>
+[]
+</TD>
+</TR>
+ </TABLE>
+    >, ];
+}

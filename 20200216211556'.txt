@@ -1,4 +1,0 @@
-digraph {
-node [shape = rectangle, height=0.5, width=1.2];
-"models.Node@6e3a3060"[shape = record, label="{#|Texto}"]
-}
