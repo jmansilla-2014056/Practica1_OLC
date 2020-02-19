@@ -78,6 +78,7 @@ public class ManejarToken {
     
     void mayorE (Tokens t){
         if(t.getId() == 62){
+            arbol.add(new Tokens(46,".", "Punto", 0, 0));
             expresion(consumir());
         }else{
             Editor.addError(t, "Se esperaban :");
@@ -93,7 +94,7 @@ public class ManejarToken {
             }
             t=consumir();
         }
-       
+            arbol.add(new Tokens(35,"#", "Numeral", 0, 0));
       //  arbol.add(0,new Tokens(46,".", "Punto", 0,0));
       //  arbol.add(new Tokens(35,"\"#\"","acpetacion",0,0));
             for(Tokens a: this.arbol){

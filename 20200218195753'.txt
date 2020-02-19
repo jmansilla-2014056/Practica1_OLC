@@ -1,0 +1,30 @@
+digraph {
+node [shape = rectangle, height=0.5, width=1.2];
+"models.Node@18a3a825"[shape = record, label="{digito|P:[0]|U:[0]|Identificador; Anulavidad:false}"]
+"models.Node@5777723d"[shape = record, label="{+|P:[0]|U:[0]|Mas; Anulavidad:false}"]
+"models.Node@5777723d"->"models.Node@18a3a825"
+"models.Node@4bf5b3a6"[shape = record, label="{.|P:[0]|U:[5]|Punto; Anulavidad:false}"]
+"models.Node@4bf5b3a6"->"models.Node@48ae2d20"
+"models.Node@4bf5b3a6"->"models.Node@5777723d"
+"models.Node@4d495690"[shape = record, label="{+|P:[1]|U:[1]|Texto; Anulavidad:false}"]
+"models.Node@2143339e"[shape = record, label="{\||P:[1, 2, 3, 4]|U:[1, 2, 3, 4]|OR; Anulavidad:false}"]
+"models.Node@2143339e"->"models.Node@47cddc93"
+"models.Node@2143339e"->"models.Node@4d495690"
+"models.Node@7eb32e67"[shape = record, label="{-|P:[2]|U:[2]|Texto; Anulavidad:false}"]
+"models.Node@47cddc93"[shape = record, label="{\||P:[2, 3, 4]|U:[2, 3, 4]|OR; Anulavidad:false}"]
+"models.Node@47cddc93"->"models.Node@79c90af7"
+"models.Node@47cddc93"->"models.Node@7eb32e67"
+"models.Node@412e0993"[shape = record, label="{*|P:[3]|U:[3]|Texto; Anulavidad:false}"]
+"models.Node@79c90af7"[shape = record, label="{\||P:[3, 4]|U:[3, 4]|OR; Anulavidad:false}"]
+"models.Node@79c90af7"->"models.Node@68ae7c61"
+"models.Node@79c90af7"->"models.Node@412e0993"
+"models.Node@68ae7c61"[shape = record, label="{/|P:[4]|U:[4]|Texto; Anulavidad:false}"]
+"models.Node@f89a705"[shape = record, label="{.|P:[1, 2, 3, 4]|U:[5]|Punto; Anulavidad:false}"]
+"models.Node@f89a705"->"models.Node@3ea69ab1"
+"models.Node@f89a705"->"models.Node@2143339e"
+"models.Node@f756e67"[shape = record, label="{digito|P:[5]|U:[5]|Identificador; Anulavidad:false}"]
+"models.Node@3ea69ab1"[shape = record, label="{+|P:[5]|U:[5]|Mas; Anulavidad:false}"]
+"models.Node@3ea69ab1"->"models.Node@f756e67"
+"models.Node@48ae2d20"[shape = record, label="{+|P:[1, 2, 3, 4]|U:[5]|Mas; Anulavidad:false}"]
+"models.Node@48ae2d20"->"models.Node@f89a705"
+}

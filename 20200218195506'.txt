@@ -1,0 +1,42 @@
+digraph {
+node [shape = rectangle, height=0.5, width=1.2];
+"models.Node@41756898"[shape = record, label="{abecedario|P:[0]|U:[0]|Identificador; Anulavidad:false}"]
+"models.Node@1359c015"[shape = record, label="{\||P:[0, 1]|U:[0, 1]|OR; Anulavidad:false}"]
+"models.Node@1359c015"->"models.Node@583683dd"
+"models.Node@1359c015"->"models.Node@41756898"
+"models.Node@583683dd"[shape = record, label="{_|P:[1]|U:[1]|Texto; Anulavidad:false}"]
+"models.Node@3d7d9c30"[shape = record, label="{*|P:[0, 1]|U:[0, 1]|Asterisco; Anulavidad:true}"]
+"models.Node@3d7d9c30"->"models.Node@1359c015"
+"models.Node@572612af"[shape = record, label="{.|P:[0, 1, 2]|U:[2]|Punto; Anulavidad:false}"]
+"models.Node@572612af"->"models.Node@aa23936"
+"models.Node@572612af"->"models.Node@3d7d9c30"
+"models.Node@66e67bd4"[shape = record, label="{conjnum|P:[2]|U:[2]|Identificador; Anulavidad:false}"]
+"models.Node@aa23936"[shape = record, label="{+|P:[2]|U:[2]|Mas; Anulavidad:false}"]
+"models.Node@aa23936"->"models.Node@66e67bd4"
+"models.Node@372bf724"[shape = record, label="{.|P:[0, 1, 2]|U:[3]|Punto; Anulavidad:false}"]
+"models.Node@372bf724"->"models.Node@507f2804"
+"models.Node@372bf724"->"models.Node@572612af"
+"models.Node@507f2804"[shape = record, label="{\>|P:[3]|U:[3]|Texto; Anulavidad:false}"]
+"models.Node@4b0fd0b4"[shape = record, label="{.|P:[0, 1, 2]|U:[4]|Punto; Anulavidad:false}"]
+"models.Node@4b0fd0b4"->"models.Node@1e622ada"
+"models.Node@4b0fd0b4"->"models.Node@372bf724"
+"models.Node@76987ce5"[shape = record, label="{conjnum|P:[4]|U:[4]|Identificador; Anulavidad:false}"]
+"models.Node@1e622ada"[shape = record, label="{+|P:[4]|U:[4]|Mas; Anulavidad:false}"]
+"models.Node@1e622ada"->"models.Node@76987ce5"
+"models.Node@5f8e553a"[shape = record, label="{.|P:[0, 1, 2]|U:[5]|Punto; Anulavidad:false}"]
+"models.Node@5f8e553a"->"models.Node@6ab1b40f"
+"models.Node@5f8e553a"->"models.Node@4b0fd0b4"
+"models.Node@6ab1b40f"[shape = record, label="{es |P:[5]|U:[5]|Texto; Anulavidad:false}"]
+"models.Node@650a7779"[shape = record, label="{.|P:[0, 1, 2]|U:[6, 7]|Punto; Anulavidad:false}"]
+"models.Node@650a7779"->"models.Node@50404069"
+"models.Node@650a7779"->"models.Node@5f8e553a"
+"models.Node@7dcaf8de"[shape = record, label="{TRUE|P:[6]|U:[6]|Texto; Anulavidad:false}"]
+"models.Node@50404069"[shape = record, label="{\||P:[6, 7]|U:[6, 7]|OR; Anulavidad:false}"]
+"models.Node@50404069"->"models.Node@1a3c2aa4"
+"models.Node@50404069"->"models.Node@7dcaf8de"
+"models.Node@1a3c2aa4"[shape = record, label="{FALSE|P:[7]|U:[7]|Texto; Anulavidad:false}"]
+"models.Node@2c3b3725"[shape = record, label="{.|P:[0, 1, 2]|U:[8]|Punto; Anulavidad:false}"]
+"models.Node@2c3b3725"->"models.Node@7eaa79c3"
+"models.Node@2c3b3725"->"models.Node@650a7779"
+"models.Node@7eaa79c3"[shape = record, label="{.|P:[8]|U:[8]|Texto; Anulavidad:false}"]
+}

@@ -45,6 +45,7 @@ public class Tree {
         raiz = operar();
         this.nombreArbol = nombreArbol;
      //   abb_report();
+        Transiciones transiciones = new  Transiciones(lstHojas,listNode,raiz);
     
     }
     
@@ -65,6 +66,8 @@ public class Tree {
                     lstHojas.get(x).add(y);
                 }
                 }
+                
+                orderFollows();
                 return nodoPor;
             case 43:
                 //+
@@ -84,6 +87,7 @@ public class Tree {
                     lstHojas.get(x).add(y);
                 }
                 }
+                orderFollows();
                 return nodoMas;
             case 46:
                 //.
@@ -173,6 +177,21 @@ public class Tree {
                 nodeCadena.noDuplicar();
                 listNode.add(nodeCadena);
                 return nodeCadena;
+                //#
+            case 35:
+                Node nodeNumeral = new Node(lista.get(index));
+                nodeNumeral.setAnulable(false);
+                
+                index++;
+                contadorHoja++;
+                nodeNumeral.setNumeracion(contadorHoja);
+                nodeNumeral.setPrimeros(nodeNumeral.getNumeracion());
+                nodeNumeral.setUltimos(nodeNumeral.getNumeracion());
+                lstHojas.add(new ArrayList<Integer>()); //*
+                nodeNumeral.noDuplicar();
+                listNode.add(nodeNumeral);
+                return nodeNumeral;
+                
             default:
                 return null;
         }
@@ -246,7 +265,12 @@ public class Tree {
             creacionDibujo(fileName);
         }
     
-        
+     
+    public void orderFollows(){
+        for(ArrayList<Integer> x: lstHojas){
+            Collections.sort(x); 
+        }
+    }
     
     public void follows(){
         FileWriter fichero = null;
