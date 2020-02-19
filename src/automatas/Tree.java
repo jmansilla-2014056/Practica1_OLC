@@ -29,7 +29,8 @@ public class Tree {
     ArrayList<Node> listNode = new ArrayList<>();
     ArrayList<Tokens> lista;
     public Node raiz = null;
-     public String nombreArbol;
+    public String nombreArbol;
+    public Transiciones transiciones;
     int contadorHoja =-1;
     int index =0;
     String fileName;
@@ -43,9 +44,8 @@ public class Tree {
     public Tree(ArrayList<Tokens> lista, String nombreArbol)throws IOException, InterruptedException {
         this.lista = lista;
         raiz = operar();
-        this.nombreArbol = nombreArbol;
-     //   abb_report();
-        Transiciones transiciones = new  Transiciones(lstHojas,listNode,raiz);
+        this.nombreArbol = nombreArbol;     
+        this.transiciones = new  Transiciones(lstHojas,listNode,raiz);
     
     }
     
@@ -335,10 +335,5 @@ public class Tree {
             //Llamar a la funcion que sacara la grafica del codigo ejecutado
             creacionDibujo(fileName);
         }
-    
-     
-    
-    
-    
     
 }

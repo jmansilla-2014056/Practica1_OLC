@@ -74,8 +74,9 @@ public class Editor extends javax.swing.JFrame {
         jAceptar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jComboER = new javax.swing.JComboBox<>();
-        jButtonArbol = new javax.swing.JButton();
+        jButtonA = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jAbout = new javax.swing.JMenuBar();
         jNuevo = new javax.swing.JMenu();
         jNew = new javax.swing.JMenuItem();
@@ -113,10 +114,10 @@ public class Editor extends javax.swing.JFrame {
 
         jComboER.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
 
-        jButtonArbol.setText("Arbol");
-        jButtonArbol.addActionListener(new java.awt.event.ActionListener() {
+        jButtonA.setText("Arbol");
+        jButtonA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonArbolActionPerformed(evt);
+                jButtonAActionPerformed(evt);
             }
         });
 
@@ -124,6 +125,13 @@ public class Editor extends javax.swing.JFrame {
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Transiciones");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -194,33 +202,34 @@ public class Editor extends javax.swing.JFrame {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addComponent(jAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(367, Short.MAX_VALUE))
+                .addContainerGap(339, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonArbol, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboER, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(jButtonA, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(jComboER, 0, 136, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
                         .addComponent(jComboER, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(jButtonArbol, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButtonA, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -369,14 +378,14 @@ public class Editor extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"Universidad de San Carlos de Guatemala"+"\n"+"Febrero 2020"+ "\n" + "OCL1" + "\n"+ "Seccion A" + "\n" +"Jesús Alejandro Mansilla Villatoro" + "\n" + "201709396" );                
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jButtonArbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonArbolActionPerformed
+    private void jButtonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAActionPerformed
         try{
             this.treeList.get(this.jComboER.getSelectedIndex()).graficar();
         }catch(Exception x){
             
         }
         
-    }//GEN-LAST:event_jButtonArbolActionPerformed
+    }//GEN-LAST:event_jButtonAActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
           try{
@@ -385,6 +394,10 @@ public class Editor extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         this.treeList.get(this.jComboER.getSelectedIndex()).transiciones.reporte();
+    }//GEN-LAST:event_jButton2ActionPerformed
         
     //Concatenar hasta encontrar un espacio, un espacio o dos puntos
     private void generador(){
@@ -859,8 +872,9 @@ public class Editor extends javax.swing.JFrame {
     private javax.swing.JMenuItem jAbrir;
     private javax.swing.JButton jAceptar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButtonArbol;
+    private javax.swing.JButton jButtonA;
     private javax.swing.JComboBox<String> jComboER;
     private javax.swing.JMenuItem jGuardar;
     private javax.swing.JMenuItem jGuardarC;
