@@ -63,6 +63,8 @@ public class ManejarToken {
         }
         else if(t.getId()==37){
             y=1;
+            virg(consumir());
+            
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         }
         else{
@@ -76,8 +78,9 @@ public class ManejarToken {
             val();
         }else{
             if(t.getId()==37){
-            virg(consumir());
             y++;
+            virg(consumir());
+            
             }else{
                 Editor.addError(t, "Se esperaba %");
             }
