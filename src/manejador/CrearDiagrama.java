@@ -44,10 +44,10 @@ public class CrearDiagrama {
 
             rt.exec( cmd );
 
-            int x=0;
+            float x=0;
             File comprobar = new File(miDir.getAbsolutePath()  +"\\"+titulo+".png");
             while (true){
-                x++;
+                x+=0.4;
                 if(comprobar.exists()){
                     if(comprobar.length() > 100){
                         break;
@@ -57,7 +57,7 @@ public class CrearDiagrama {
             }
 
             System.out.println("--------------------------------------");
-            Thread.sleep(x+1000);
+            Thread.sleep((long) (x+1000));
 
             ScrollPaneReport scrollPaneReport = new ScrollPaneReport(fileOutputPath);
 

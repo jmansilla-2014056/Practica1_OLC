@@ -8,8 +8,10 @@ package manejador;
 import automatas.Tree;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import models.ExpresionR;
 import models.Tokens;
 import practicauno_olc.Editor;
@@ -23,6 +25,7 @@ public class ManejarToken {
     ArrayList<Tokens> arbol = new ArrayList<>();
     ArrayList<Tree> treeList = new ArrayList<>();;
     String nombreEr="";
+    int y=0;
     int x=-1;
     Tokens token;
     
@@ -59,6 +62,7 @@ public class ManejarToken {
             guionE(consumir());
         }
         else if(t.getId()==37){
+            y=1;
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         }
         else{
@@ -67,6 +71,33 @@ public class ManejarToken {
     }
     
     
+    void virg(Tokens t){       
+        if(y==4){
+            val();
+        }else{
+            if(t.getId()==37){
+            virg(consumir());
+            y++;
+            }else{
+                Editor.addError(t, "Se esperaba %");
+            }
+        }
+        
+    }
+    
+    void val(){
+        while(true){
+            Tokens t = consumir();
+            if(t.getLexema().equals("}")){
+                break;
+            }else{
+                if(t.getLexema().equals(";")){
+                    Random rd = new Random();
+                  JOptionPane.showMessageDialog(null, "lexema " + String.valueOf(rd.nextBoolean()));   
+                }
+            }
+        }
+    }
     
     void guionE (Tokens t){
         if(t.getId() == 45){

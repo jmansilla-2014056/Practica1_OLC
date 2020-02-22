@@ -1,0 +1,32 @@
+digraph {
+node [shape = rectangle, height=0.5, width=1.2];
+"models.Node@6d9a5445"[shape = record, label="{Los |P:[0]|U:[0]|Texto; Anulavidad:false}"]
+"models.Node@4d3e4e34"[shape = record, label="{\||P:[0, 1]|U:[0, 1]|OR; Anulavidad:false}"]
+"models.Node@4d3e4e34"->"models.Node@458c05f5"
+"models.Node@4d3e4e34"->"models.Node@6d9a5445"
+"models.Node@458c05f5"[shape = record, label="{El |P:[1]|U:[1]|Texto; Anulavidad:false}"]
+"models.Node@19b7ae9"[shape = record, label="{.|P:[0, 1]|U:[2, 3, 4, 5]|Punto; Anulavidad:false}"]
+"models.Node@19b7ae9"->"models.Node@3e1c3ee3"
+"models.Node@19b7ae9"->"models.Node@4d3e4e34"
+"models.Node@16c88fa"[shape = record, label="{vocales|P:[2]|U:[2]|Identificador; Anulavidad:false}"]
+"models.Node@246a968f"[shape = record, label="{\||P:[2, 3]|U:[2, 3]|OR; Anulavidad:false}"]
+"models.Node@246a968f"->"models.Node@7efcecd9"
+"models.Node@246a968f"->"models.Node@16c88fa"
+"models.Node@7efcecd9"[shape = record, label="{otrasLetras|P:[3]|U:[3]|Identificador; Anulavidad:false}"]
+"models.Node@21483ec3"[shape = record, label="{+|P:[2, 3]|U:[2, 3]|Mas; Anulavidad:false}"]
+"models.Node@21483ec3"->"models.Node@246a968f"
+"models.Node@3e1c3ee3"[shape = record, label="{.|P:[2, 3]|U:[2, 3, 4, 5]|Punto; Anulavidad:false}"]
+"models.Node@3e1c3ee3"->"models.Node@44865948"
+"models.Node@3e1c3ee3"->"models.Node@21483ec3"
+"models.Node@342861b9"[shape = record, label="{abecedario|P:[4]|U:[4]|Identificador; Anulavidad:false}"]
+"models.Node@2dabd9c1"[shape = record, label="{\||P:[4, 5]|U:[4, 5]|OR; Anulavidad:false}"]
+"models.Node@2dabd9c1"->"models.Node@4df54491"
+"models.Node@2dabd9c1"->"models.Node@342861b9"
+"models.Node@4df54491"[shape = record, label="{_|P:[5]|U:[5]|Texto; Anulavidad:false}"]
+"models.Node@44865948"[shape = record, label="{*|P:[4, 5]|U:[4, 5]|Asterisco; Anulavidad:true}"]
+"models.Node@44865948"->"models.Node@2dabd9c1"
+"models.Node@3bcf087e"[shape = record, label="{.|P:[0, 1]|U:[6]|Punto; Anulavidad:false}"]
+"models.Node@3bcf087e"->"models.Node@4c9d9317"
+"models.Node@3bcf087e"->"models.Node@19b7ae9"
+"models.Node@4c9d9317"[shape = record, label="{#|P:[6]|U:[6]|Numeral; Anulavidad:false}"]
+}

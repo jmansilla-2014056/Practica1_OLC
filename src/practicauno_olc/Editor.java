@@ -75,8 +75,8 @@ public class Editor extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jComboER = new javax.swing.JComboBox<>();
         jButtonA = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonF = new javax.swing.JButton();
+        jButtonT = new javax.swing.JButton();
         jAbout = new javax.swing.JMenuBar();
         jNuevo = new javax.swing.JMenu();
         jNew = new javax.swing.JMenuItem();
@@ -85,7 +85,7 @@ public class Editor extends javax.swing.JFrame {
         jGuardarC = new javax.swing.JMenuItem();
         jSalir = new javax.swing.JMenuItem();
         jHelp = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuAbout = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -121,17 +121,17 @@ public class Editor extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Follows");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonF.setText("Follows");
+        jButtonF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonFActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Transiciones");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonT.setText("Transiciones");
+        jButtonT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonTActionPerformed(evt);
             }
         });
 
@@ -181,13 +181,13 @@ public class Editor extends javax.swing.JFrame {
 
         jHelp.setText("Help");
 
-        jMenuItem1.setText("About");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuAbout.setText("About");
+        jMenuAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuAboutActionPerformed(evt);
             }
         });
-        jHelp.add(jMenuItem1);
+        jHelp.add(jMenuAbout);
 
         jAbout.add(jHelp);
 
@@ -208,32 +208,33 @@ public class Editor extends javax.swing.JFrame {
                 .addComponent(jScrollPane2)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(jButtonF, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                     .addComponent(jButtonA, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                     .addComponent(jComboER, 0, 136, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(29, 29, 29))
+                    .addComponent(jButtonT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jComboER, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(jButtonA, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonF, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addComponent(jButtonT, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         pack();
@@ -244,19 +245,6 @@ public class Editor extends javax.swing.JFrame {
      listaPalabras.clear();
      //Llenar biblioteca con palabras reservadas   
      listaPalabras.add(new Biblioteca(1,"CONJ",Color.CYAN));
- /*    listaPalabras.add(new Biblioteca(2,"Nombre",Color.CYAN));
-     listaPalabras.add(new Biblioteca(3,"Tipo",Color.CYAN));
-     listaPalabras.add(new Biblioteca(4,"Vida",Color.CYAN));
-     listaPalabras.add(new Biblioteca(5,"Imagen",Color.CYAN));
-     listaPalabras.add(new Biblioteca(6,"Sonido",Color.CYAN));
-     listaPalabras.add(new Biblioteca(7,"Ataque",Color.CYAN));
-     listaPalabras.add(new Biblioteca(8,"Principiante",Color.CYAN));
-     listaPalabras.add(new Biblioteca(9,"Intermedio",Color.CYAN));
-     listaPalabras.add(new Biblioteca(10,"Master",Color.CYAN));
-     listaPalabras.add(new Biblioteca(11,"Rivales",Color.CYAN));
-     listaPalabras.add(new Biblioteca(12,"Variables",Color.CYAN));
-     listaPalabras.add(new Biblioteca(13,"Variable",Color.CYAN));
-     listaPalabras.add(new Biblioteca(14,"Personaje",Color.CYAN)); */
                      
      //limpiar       
        concatenar = "";
@@ -269,7 +257,7 @@ public class Editor extends javax.swing.JFrame {
      //Empieza a analizar     
     generador();    
     
- //   ArrayList<Pokedex> arraypokedex= ManejarToken.HacerNiveles(listaTokens);
+    // ArrayList<Pokedex> arraypokedex= ManejarToken.HacerNiveles(listaTokens);
     ManejarToken mt = new ManejarToken();
     this.treeList = mt.Parser(listaTokens);
  
@@ -374,9 +362,9 @@ public class Editor extends javax.swing.JFrame {
          System.exit(0);
     }//GEN-LAST:event_jSalirActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMenuAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAboutActionPerformed
         JOptionPane.showMessageDialog(null,"Universidad de San Carlos de Guatemala"+"\n"+"Febrero 2020"+ "\n" + "OCL1" + "\n"+ "Seccion A" + "\n" +"Jesús Alejandro Mansilla Villatoro" + "\n" + "201709396" );                
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jMenuAboutActionPerformed
 
     private void jButtonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAActionPerformed
         try{
@@ -387,18 +375,19 @@ public class Editor extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonAActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFActionPerformed
           try{
             this.treeList.get(this.jComboER.getSelectedIndex()).follows();
         }catch(Exception x){
             
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonFActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTActionPerformed
          this.treeList.get(this.jComboER.getSelectedIndex()).transiciones.reporte();
-    }//GEN-LAST:event_jButton2ActionPerformed
-        
+    }//GEN-LAST:event_jButtonTActionPerformed
+ 
+    
     //Concatenar hasta encontrar un espacio, un espacio o dos puntos
     private void generador(){
         jText.setText(jText.getText() + " ");
@@ -635,12 +624,12 @@ public class Editor extends javax.swing.JFrame {
                      listaErrores.add(new Trampa(String.valueOf(analizar[x]),"No pertenece al lenguaje",obtenerFila(contador),obtenerColumna(contador)));
                  }
                  
-          }           
+            }           
         }
     }
     
     //Capturar palabras que pertenecen y palabras que no, un try catch capturaria un error sintactico
-        private void palabra(){
+    private void palabra(){
         try{
         if(Character.isLetter(jText.getText().charAt(contador)) || Character.isDigit(jText.getText().charAt(contador))){
             concatenar = concatenar + String.valueOf(jText.getText().charAt(contador));
@@ -667,7 +656,6 @@ public class Editor extends javax.swing.JFrame {
             
         }
     }
-       
     //Metodo para obtener cadenas  //Un try catch aqui , donde nunca viene " seria un error sintactico
     private void cadena() {
         try{
@@ -689,8 +677,6 @@ public class Editor extends javax.swing.JFrame {
             contador--;
         }
     } 
-    
-    
     
     private void comentarioL() {
         try{
@@ -738,7 +724,6 @@ public class Editor extends javax.swing.JFrame {
             contador--;
         }
     } 
-           
      //Metodo para obetener numeros, un try catch  
     private void numero(){        
         if(Character.isDigit(jText.getText().charAt(contador))){
@@ -753,7 +738,6 @@ public class Editor extends javax.swing.JFrame {
             contador--;
         }
     }
-    
     
      private int obtenerFila(int index){
          int x = -1;
@@ -872,16 +856,16 @@ public class Editor extends javax.swing.JFrame {
     private javax.swing.JMenuItem jAbrir;
     private javax.swing.JButton jAceptar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonA;
+    private javax.swing.JButton jButtonF;
+    private javax.swing.JButton jButtonT;
     private javax.swing.JComboBox<String> jComboER;
     private javax.swing.JMenuItem jGuardar;
     private javax.swing.JMenuItem jGuardarC;
     private javax.swing.JMenu jHelp;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuAbout;
     private javax.swing.JMenuItem jNew;
     private javax.swing.JMenu jNuevo;
     private javax.swing.JMenuItem jSalir;
